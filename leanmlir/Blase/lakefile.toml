@@ -1,0 +1,46 @@
+name = "Blase"
+version = "0.1.0"
+testDriver = "BlaseTest"
+defaultTargets = ["Blase", "Blasewuzla", "blasewuzla"]
+moreLeanArgs = ["--tstack=400000"]
+moreServerArgs = ["--tstack=400000"]
+# precompileModules = true # Ensure that reflective code that uses native_decide runs compiled code, not in the ir_interpreter.
+
+
+[[lean_lib]]
+name = "Blase"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4-nightly-testing"
+rev = "nightly-testing-2025-12-01"
+
+[[lean_lib]]
+name = "BlaseTest"
+
+[[lean_lib]]
+name = "BlaseEval"
+
+
+[[require]]
+name = "SexprPBV"
+path = "../SexprPBV"
+rev = "main"
+
+[[require]]
+name = "valaig"
+git = "https://github.com/opencompl/valaig"
+rev = "97fc5d8872fdd4ccb4655a7ad97df5852670c1e7"
+
+[[require]]
+scope = "leanprover"
+name = "Cli"
+rev = "nightly-testing"
+
+[[lean_lib]]
+name = "Blasewuzla"
+
+[[lean_exe]]
+name = "blasewuzla"
+root = "BlasewuzlaMain"
+supportInterpreter = true
